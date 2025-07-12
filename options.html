@@ -1,0 +1,160 @@
+<!--
+  options.html - Chrome Extension Options Page
+  Provides configuration options for the Xdebug Chrome Extension (e.g., IDE key).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xdebug Chrome Extension Options</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em auto;
+            max-width: 400px;
+            padding: 1em;
+        }
+
+        h1, h2, h3 {
+            color: #46bfd2;
+        }
+
+        label {
+            display: block;
+            margin-top: 1em;
+        }
+
+        input[type="text"] {
+            margin-top: 0.2em;
+            padding: 0.5em;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 1.5em;
+            padding: 0.5em 1em;
+        }
+
+        .status {
+            color: green;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+
+        .main-header {
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5em;
+            padding-bottom: 1em;
+        }
+
+        .header-left {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+        }
+
+        .page-title {
+            font-size: 1.5em;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .header-logo {
+            height: 36px;
+        }
+
+        .header-nav {
+            white-space: nowrap;
+        }
+
+        .header-nav a {
+            color: #007bff;
+            margin-left: 1em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .header-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .header-logo {
+            height: 36px;
+        }
+
+        footer {
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.95em;
+            margin-top: 2em;
+            padding-top: 1.5em;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 36px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="header-left">
+        <a href="https://github.com/ThreeLeaf-com/xdebug-chrome-extension" target="_blank" title="View Application Logo">
+            <img src="images/xce-icon.svg" alt="Xdebug Extension Icon" class="header-logo"/>
+        </a>
+        <h2 class="page-title">Extension Options</h2>
+    </div>
+    <nav aria-label="Main navigation" class="header-nav">
+        <a href="options.html">Options</a>
+        <a href="help.html">Help</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </nav>
+</header>
+<div style="text-align:center; margin-bottom: 1.5em;">
+    <span style="font-size:1.15em; font-weight:600; color:#333; letter-spacing:0.01em;">The Xdebug Chrome Extension PHP Developers Deserve</span>
+</div>
+<main>
+    <form id="options-form">
+        <label for="ideKey">IDE Key</label>
+        <input id="ideKey" name="ideKey" autocomplete="off" placeholder="XDEBUG_ECLIPSE" type="text">
+
+        <label for="profileTrigger">Profile Trigger (optional)</label>
+        <input id="profileTrigger" name="profileTrigger" autocomplete="off" placeholder="(default: IDE Key)" type="text">
+
+        <label for="traceTrigger">Trace Trigger (optional)</label>
+        <input id="traceTrigger" name="traceTrigger" autocomplete="off" placeholder="(default: IDE Key)" type="text">
+
+        <button type="submit">Save</button>
+        <div id="save-status" aria-live="polite" class="status" style="display:none;">Saved!</div>
+    </form>
+    <div class="how-to-use" style="margin-top:2em;">
+        <details>
+            <summary><strong>How to Use</strong></summary>
+            <ul style="margin-top:1em;">
+                <li>Set your IDE Key to match your IDE’s configuration (e.g., <code>XDEBUG_ECLIPSE</code> for PHPStorm).</li>
+                <li>Use the extension popup to enable Debug, Profile, or Trace modes as needed.</li>
+                <li>Profile and Trace modes will generate files on your server (see your Xdebug configuration).</li>
+                <li>For more help, <a href="help.html">see the full guide</a>.</li>
+            </ul>
+        </details>
+    </div>
+</main>
+<footer>
+    <a href="https://threeleaf.com" target="_blank" title="View ThreeLeaf.com Logo">
+        <img src="images/threeleaf-icon.svg" alt="ThreeLeaf logo" class="footer-logo"/>
+    </a>
+    <span id="footer-copyright"></span>
+</footer>
+<script src="options.js"></script>
+</body>
+</html>

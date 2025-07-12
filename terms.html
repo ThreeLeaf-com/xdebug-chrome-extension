@@ -1,0 +1,125 @@
+<!--
+  terms.html - Xdebug Chrome Extension Terms of Use
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terms of Use - Xdebug Chrome Extension</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em auto;
+            max-width: 700px;
+            padding: 1em;
+        }
+
+        h1, h2, h3 {
+            color: #46bfd2;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5em;
+        }
+
+        code {
+            background: #f4f4f4;
+            border-radius: 3px;
+            padding: 2px 4px;
+        }
+
+        .main-header {
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5em;
+            padding-bottom: 1em;
+        }
+
+        .header-left {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+        }
+
+        .page-title {
+            font-size: 1.5em;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .header-logo {
+            height: 36px;
+        }
+
+        .header-nav a {
+            color: #007bff;
+            margin-left: 1em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .header-nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.95em;
+            margin-top: 2em;
+            padding-top: 1.5em;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 36px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="header-left">
+        <a href="https://github.com/ThreeLeaf-com/xdebug-chrome-extension" target="_blank" title="View Application Logo">
+            <img src="images/xce-icon.svg" alt="Xdebug Extension Icon" class="header-logo"/>
+        </a>
+        <h2 class="page-title">Terms of Use</h2>
+    </div>
+    <nav aria-label="Main navigation" class="header-nav">
+        <a href="options.html">Options</a>
+        <a href="help.html">Help</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </nav>
+</header>
+<main>
+    <h1>Terms of Use</h1>
+    <p><strong>Effective Date:</strong> <span id="effective-date"></span></p>
+    <p>By installing or using the Xdebug Chrome Extension (the "Extension"), you agree to the following terms:</p>
+    <h2>Intended Use</h2>
+    <p>The Extension is provided for use by software developers to assist with PHP debugging, profiling, and tracing. It is not intended for use by the public or for any purpose other than software development.</p>
+    <h2>No Warranty</h2>
+    <p>The Extension is provided <strong>as is</strong>, without warranty of any kind, express or implied. Use of the Extension is at your own risk.</p>
+    <h2>Limitation of Liability</h2>
+    <p>In no event shall the authors or copyright holders be liable for any damages or other liability arising from the use of the Extension.</p>
+    <h2>Changes to Terms</h2>
+    <p>These terms may be updated at any time. Continued use of the Extension after changes constitutes acceptance of the new terms.</p>
+    <h2>Contact</h2>
+    <p>If you have any questions about these terms, please <a href="https://threeleaf.com/contact" target="_blank">contact us</a>.</p>
+</main>
+<footer>
+    <a href="https://threeleaf.com" target="_blank" title="View ThreeLeaf.com Logo">
+        <img src="images/threeleaf-icon.svg" alt="ThreeLeaf logo" class="footer-logo"/>
+    </a>
+    <span id="footer-copyright"></span>
+</footer>
+<script src="terms.js"></script>
+</body>
+</html>

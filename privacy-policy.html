@@ -1,0 +1,125 @@
+<!--
+  privacy-policy.html - Xdebug Chrome Extension Privacy Policy
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy - Xdebug Chrome Extension</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em auto;
+            max-width: 700px;
+            padding: 1em;
+        }
+
+        h1, h2, h3 {
+            color: #46bfd2;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5em;
+        }
+
+        code {
+            background: #f4f4f4;
+            border-radius: 3px;
+            padding: 2px 4px;
+        }
+
+        .main-header {
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5em;
+            padding-bottom: 1em;
+        }
+
+        .header-left {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+        }
+
+        .page-title {
+            font-size: 1.5em;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .header-logo {
+            height: 36px;
+        }
+
+        .header-nav a {
+            color: #007bff;
+            margin-left: 1em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .header-nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.95em;
+            margin-top: 2em;
+            padding-top: 1.5em;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 36px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="header-left">
+        <a href="https://github.com/ThreeLeaf-com/xdebug-chrome-extension" target="_blank" title="View Application Logo">
+            <img src="images/xce-icon.svg" alt="Xdebug Extension Icon" class="header-logo"/>
+        </a>
+        <h2 class="page-title">Privacy Policy</h2>
+    </div>
+    <nav aria-label="Main navigation" class="header-nav">
+        <a href="options.html">Options</a>
+        <a href="help.html">Help</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </nav>
+</header>
+<main>
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> <span id="effective-date"></span></p>
+    <p>This privacy policy applies to the Xdebug Chrome Extension (the "Extension").</p>
+    <h2>Data Collection</h2>
+    <p>The Extension does <strong>not</strong> collect, store, or transmit any personal or sensitive user data. All configuration and settings are stored locally in your browser using Chrome's storage API.</p>
+    <h2>Analytics and Tracking</h2>
+    <p>The Extension does <strong>not</strong> use any analytics, telemetry, or tracking services. No usage data is sent to any server.</p>
+    <h2>Permissions</h2>
+    <p>The Extension requests only the minimum permissions required to function (such as cookie and storage access). These are used solely for enabling Xdebug features and saving your preferences.</p>
+    <h2>Third-Party Services</h2>
+    <p>The Extension does not use or connect to any third-party services.</p>
+    <h2>Contact</h2>
+    <p>If you have any questions or concerns about this privacy policy, please <a href="https://threeleaf.com/contact" target="_blank">contact us</a>.</p>
+</main>
+<footer>
+    <a href="https://threeleaf.com" target="_blank" title="View ThreeLeaf.com Logo">
+        <img src="images/threeleaf-icon.svg" alt="ThreeLeaf logo" class="footer-logo"/>
+    </a>
+    <span id="footer-copyright"></span>
+</footer>
+<script src="privacy-policy.js"></script>
+</body>
+</html>

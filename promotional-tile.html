@@ -1,0 +1,146 @@
+<!--
+  promotional-tile.html - Promotional Tile for Xdebug Chrome Extension
+  marketing and store listing purposes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xdebug Chrome Extension – Promo Tile</title>
+    <style>
+        body {
+            align-items: center;
+            background: #fff;
+            color: #111;
+            display: flex;
+            flex-direction: column;
+            font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+            justify-content: flex-start;
+            margin: 0;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .promo-container {
+            align-items: center;
+            background: #fff;
+            border-radius: 18px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            height: 280px;
+            justify-content: flex-start;
+            overflow: hidden;
+            /*    box-shadow: 0 2px 12px 0 #0001; */
+            position: relative;
+            width: 440px;
+        }
+
+        .promo-butterfly {
+            display: block;
+            height: 100px;
+            margin: 18px auto 0 auto;
+            width: 100px;
+        }
+
+        .promo-slogan {
+            color: #111;
+            font-size: 1.6em;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            margin: 0;
+            text-align: center;
+        }
+
+        .promo-buttons {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            margin: 15px 0 0 0;
+        }
+
+        .promo-btn {
+            align-items: center;
+            border: 3px solid #2222;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px #0001;
+            cursor: default;
+            display: flex;
+            font-size: 1.1em;
+            font-weight: 600;
+            gap: 7px;
+            min-width: 90px;
+            padding: 8px 10px;
+            user-select: none;
+        }
+
+        .btn-debug {
+            background: #64ba3920;
+            border-color: #64ba39;
+            color: #222;
+        }
+
+        .btn-profile {
+            background: #b965a120;
+            border-color: #b965a1;
+            color: #222;
+        }
+
+        .btn-trace {
+            background: #fbd40520;
+            border-color: #fbd405;
+            color: #222;
+        }
+
+        .promo-btn-icon {
+            height: 22px;
+            vertical-align: middle;
+            width: 22px;
+        }
+
+        .promo-footer {
+            align-items: center;
+            bottom: 18px;
+            display: flex;
+            gap: 8px;
+            position: absolute;
+            right: 30px;
+        }
+
+        .promo-footer-logo {
+            height: 28px;
+            vertical-align: middle;
+        }
+
+        .promo-footer-text {
+            color: #222;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="promo-container">
+    <img src="images/xce-icon.svg" alt="Xdebug Extension Butterfly" class="promo-butterfly"/>
+    <div class="promo-slogan">The Xdebug Chrome Extension<br>PHP Developers Deserve</div>
+    <div class="promo-buttons">
+        <div class="promo-btn btn-debug">
+            <img src="images/xce-icon-session.png" alt="Debug Mode" class="promo-btn-icon" style="width:22px;height:22px;object-fit:contain;"/>
+            Debug
+        </div>
+        <div class="promo-btn btn-profile">
+            <img src="images/xce-icon-profile.png" alt="Profile Mode" class="promo-btn-icon" style="width:22px;height:22px;object-fit:contain;"/>
+            Profile
+        </div>
+        <div class="promo-btn btn-trace">
+            <img src="images/xce-icon-trace.png" alt="Trace Mode" class="promo-btn-icon" style="width:22px;height:22px;object-fit:contain;"/>
+            Trace
+        </div>
+    </div>
+    <div class="promo-footer">
+        <img src="images/threeleaf-icon.svg" alt="ThreeLeaf.com logo" class="promo-footer-logo"/>
+        <span class="promo-footer-text">ThreeLeaf.com</span>
+    </div>
+</div>
+</body>
+</html>

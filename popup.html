@@ -1,0 +1,118 @@
+<!--
+  popup.html - Chrome Extension Popup UI
+  Provides the user interface for toggling Xdebug modes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xdebug Chrome Extension</title>
+    <style>
+        body {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif;
+            font-size: 1em;
+            justify-content: center;
+            min-width: 200px;
+            padding: 10px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .status {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        button {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            font-size: 1.08em;
+            margin: 2px auto;
+            max-width: 220px;
+            padding: 10px 20px;
+            transition: background 0.2s, color 0.2s;
+            width: 100%;
+        }
+
+        #xdebug-session {
+            background: #64ba3920;
+            color: #222;
+        }
+
+        #xdebug-profile {
+            background: #b965a120;
+            color: #222;
+        }
+
+        #xdebug-trace {
+            background: #fbd40520;
+            color: #222;
+        }
+
+        #xdebug-off {
+            background: #cccccc20;
+            color: #222;
+        }
+
+        #xdebug-toggle {
+            background: #46bfd220;
+            color: #222;
+        }
+
+        #xdebug-session:hover, #xdebug-session.active {
+            background: #64ba39;
+            color: #fff;
+        }
+
+        #xdebug-profile:hover, #xdebug-profile.active {
+            background: #b965a1;
+            color: #fff;
+        }
+
+        #xdebug-trace:hover, #xdebug-trace.active {
+            background: #fbd405;
+            color: #222;
+        }
+
+        #xdebug-off:hover, #xdebug-off.active {
+            background: #ccc;
+            color: #222;
+        }
+
+        #xdebug-toggle:hover {
+            background: #46bfd2;
+            color: #fff;
+        }
+
+        .options-link {
+            color: #46bfd2;
+            display: block;
+            font-size: 1em;
+            margin-top: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .options-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div aria-live="polite" class="status"><span id="xdebug-status">...</span></div>
+    <button id="xdebug-session">Debug (Session)</button>
+    <button id="xdebug-profile">Profile</button>
+    <button id="xdebug-trace">Trace</button>
+    <button id="xdebug-off">Off</button>
+    <button id="xdebug-toggle">Toggle Mode</button>
+    <a href="options.html" target="_blank" class="options-link">Extension Options</a>
+</main>
+<script src="popup.js"></script>
+</body>
+</html>

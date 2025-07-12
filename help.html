@@ -1,0 +1,203 @@
+<!--
+  help.html - Xdebug Chrome Extension Help & Guide
+  Provides detailed instructions, explanations, and troubleshooting for users.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xdebug Chrome Extension Help</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em auto;
+            max-width: 700px;
+            padding: 1em;
+        }
+
+        h1, h2, h3 {
+            color: #46bfd2;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5em;
+        }
+
+        code {
+            background: #f4f4f4;
+            border-radius: 3px;
+            padding: 2px 4px;
+        }
+
+        .mode-table {
+            border-collapse: collapse;
+            margin-bottom: 2em;
+            width: 100%;
+        }
+
+        .mode-table th, .mode-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .mode-table th {
+            background: #f0f8fa;
+        }
+
+        .main-header {
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5em;
+            padding-bottom: 1em;
+        }
+
+        .header-left {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+        }
+
+        .page-title {
+            font-size: 1.5em;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .header-logo {
+            height: 36px;
+        }
+
+        .header-nav a {
+            color: #007bff;
+            margin-left: 1em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .header-nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.95em;
+            margin-top: 2em;
+            padding-top: 1.5em;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 36px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        .sr-only {
+            border-width: 0;
+            clip: rect(0, 0, 0, 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+    </style>
+</head>
+<body>
+<header class="main-header">
+    <div class="header-left">
+        <a href="https://github.com/ThreeLeaf-com/xdebug-chrome-extension" target="_blank" title="View Application Logo">
+            <img src="images/xce-icon.svg" alt="Xdebug Extension Icon" class="header-logo"/>
+        </a>
+        <h2 class="page-title">Help &amp; Guide</h2>
+    </div>
+    <nav aria-label="Main navigation" class="header-nav">
+        <a href="options.html">Options</a>
+        <a href="help.html">Help</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+    </nav>
+</header>
+<main>
+    <h1>Xdebug Chrome Extension: Help & Guide</h1>
+    <p>This page provides a comprehensive guide to using the Xdebug Chrome Extension for PHP development. Whether you’re new to Xdebug or just need a refresher, you’ll find everything you need here.</p>
+
+    <h2>Quick Start</h2>
+    <ol>
+        <li>Install the extension in Chrome (<a href="https://github.com/ThreeLeaf-com/xdebug-chrome-extension" target="_blank">see instructions</a>).</li>
+        <li>Set your IDE Key in the <a href="options.html">Options</a> page to match your IDE (e.g., <code>XDEBUG_ECLIPSE</code> for PHPStorm).</li>
+        <li>Use the popup to enable Debug, Profile, or Trace mode as needed.</li>
+        <li>For Profile/Trace, check your server’s <code>xdebug.output_dir</code> for output files.</li>
+    </ol>
+
+    <h2>Extension Modes</h2>
+    <table class="mode-table">
+        <caption class="sr-only">Xdebug Extension Modes and Expected Behavior</caption>
+        <tr>
+            <th>Mode</th>
+            <th>How to Enable</th>
+            <th>Server Config</th>
+            <th>Expected Behavior</th>
+        </tr>
+        <tr>
+            <td><strong>Session (Debug)</strong></td>
+            <td>Set <code>XDEBUG_SESSION</code> cookie via popup</td>
+            <td><code>xdebug.mode=debug</code><br><code>xdebug.start_with_request=trigger</code></td>
+            <td>Stops at breakpoints in your IDE</td>
+        </tr>
+        <tr>
+            <td><strong>Profile</strong></td>
+            <td>Set <code>XDEBUG_PROFILE</code> cookie via popup</td>
+            <td><code>xdebug.mode=profile</code><br><code>xdebug.start_with_request=trigger</code><br><code>xdebug.output_dir</code> writable</td>
+            <td>Creates <code>cachegrind.out.&lt;pid&gt;</code> files on server</td>
+        </tr>
+        <tr>
+            <td><strong>Trace</strong></td>
+            <td>Set <code>XDEBUG_TRACE</code> cookie via popup</td>
+            <td><code>xdebug.mode=trace</code><br><code>xdebug.start_with_request=trigger</code><br><code>xdebug.output_dir</code> writable</td>
+            <td>Creates <code>trace.&lt;c&gt;</code> files on server</td>
+        </tr>
+    </table>
+
+    <h2>Configuration Tips</h2>
+    <ul>
+        <li>Make sure <code>xdebug.mode</code> includes the modes you want to use (e.g., <code>debug,profile,trace</code>).</li>
+        <li>Set <code>xdebug.start_with_request = trigger</code> for best compatibility with the extension.</li>
+        <li>Ensure <code>xdebug.output_dir</code> is writable by your PHP process (especially in Docker or VMs).</li>
+        <li>Restart your web server or PHP-FPM after changing Xdebug settings.</li>
+    </ul>
+
+    <h2>Troubleshooting</h2>
+    <ul>
+        <li>If breakpoints don’t work, check your IDE key and that your IDE is listening for connections.</li>
+        <li>If no profile/trace files appear, check <code>xdebug.output_dir</code> and permissions (and if running in Docker, check the container’s filesystem).</li>
+        <li>Use <code>phpinfo()</code> to verify Xdebug is enabled and settings are correct.</li>
+        <li>Check <code>xdebug.log</code> for errors (set <code>xdebug.log_level = 10</code> for verbose output).</li>
+    </ul>
+
+    <h2>Further Resources</h2>
+    <ul>
+        <li><a href="https://xdebug.org/docs/">Official Xdebug Documentation</a></li>
+        <li><a href="https://github.com/ThreeLeaf-com/xdebug-chrome-extension">Extension GitHub Repository</a></li>
+        <li><a href="https://github.com/ThreeLeaf-com/xdebug-chrome-extension/issues">Report a Problem or Make a Suggestion</a></li>
+    </ul>
+</main>
+<footer>
+    <a href="https://threeleaf.com" target="_blank" title="View ThreeLeaf.com Logo">
+        <img src="images/threeleaf-icon.svg" alt="ThreeLeaf logo" class="footer-logo"/>
+    </a>
+    <span id="footer-copyright"></span>
+</footer>
+<script src="help.js"></script>
+</body>
+</html>
